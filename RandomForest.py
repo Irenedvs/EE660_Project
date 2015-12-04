@@ -16,7 +16,7 @@ test_X = test.drop('Id',axis=1).values
 X,X_,y,y_ = cross_validation.train_test_split(train_X,train_y,test_size=0.2)
 
 # Train and predict with the random forest classifier
-rf = ensemble.RandomForestClassifier(n_estimators=500, max_depth=None, min_samples_split=1, random_state=0)
+rf = ensemble.RandomForestClassifier(n_estimators=500, max_depth=5, min_samples_split=1, random_state=0)
 rf.fit(X,y)
 y_rf = rf.predict(X_)
 print metrics.classification_report(y_,y_rf)
